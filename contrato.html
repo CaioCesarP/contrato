@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de contrato</title>
+
+    <!-- JQUERY 2.1.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- JQUERY 2.1.1 -->
+    <!-- BOOTSTRAP 3 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- BOOTSTRAP 3 -->
+    <!-- BOOTSTRAP-SELECT 1.10.0 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css"
+        rel="stylesheet" />
+    <!-- BOOTSTRAP-SELECT 1.10.0 -->
+
+    <style>
+        /* TABS */
+        .nav-tabs>li>a {
+            color: #121212 !important;
+            font-weight: bold;
+        }
+
+        .nav-tabs>li.active>a {
+            background-color: #ce8049 !important;
+            color: #ffffff !important;
+            border-radius: 0 !important;
+            font-weight: bolder;
+        }
+
+        /* TABS */
+
+        /* CONTAINER */
+        .container {
+            margin-top: 30px;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1380px;
+                max-width: 98%;
+            }
+        }
+
+        /* CONTAINER */
+
+        /* CONTRATANTE */
+        /* LABEL */
+        .form-group>.form-control-label {
+            margin: 0;
+        }
+
+        /* LABEL */
+        /* DIVIDER */
+        .half-rule {
+            margin: 0 15px 10px 15px;
+            height: 1px;
+            background-color: #ce8049;
+        }
+
+        /* DIVIDER */
+        /* BUTTON */
+        .btn-group.bootstrap-select.form-control>button {
+            border: #eaeaea 1px solid;
+            border-bottom: #ce8049 5px solid;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .btn-group.bootstrap-select.form-control.open>.dropdown-menu.open {
+            top: 105%;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .form-group>div>:where(.btn-add, .btn-remove) {
+            border-radius: 20px;
+            padding: 3px 5px;
+            border: #121212 solid 1px;
+            box-shadow: -0.5px 1px #121212;
+            background: rgb(184, 184, 184);
+            background: -moz-linear-gradient(180deg, rgba(184, 184, 184, 1) 0%, rgba(97, 97, 97, 1) 100%);
+            background: -webkit-linear-gradient(180deg, rgba(184, 184, 184, 1) 0%, rgba(97, 97, 97, 1) 100%);
+            background: linear-gradient(180deg, rgba(184, 184, 184, 1) 0%, rgba(97, 97, 97, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b8b8b8", endColorstr="#616161", GradientType=1);
+        }
+
+        .form-group>div>:where(.btn-add, .btn-remove)>:where(.glyphicon-plus, .glyphicon-minus) {
+            text-shadow: 2px 2px #121212;
+            color: #c9c9c9;
+        }
+
+        /* BUTTON */
+        /* SWITCH */
+        .onoffswitch {
+            position: relative;
+            width: 60px;
+        }
+
+        .onoffswitch-checkbox {
+            display: none;
+        }
+
+        .onoffswitch-label {
+            display: block;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        .onoffswitch-inner {
+            display: block;
+            width: 200%;
+            margin-left: -100%;
+            -moz-transition: margin 0.3s ease-in 0s;
+            -webkit-transition: margin 0.3s ease-in 0s;
+            -o-transition: margin 0.3s ease-in 0s;
+            transition: margin 0.3s ease-in 0s;
+        }
+
+        .onoffswitch-inner:before,
+        .onoffswitch-inner:after {
+            display: block;
+            float: left;
+            width: 50%;
+            height: 20px;
+            padding: 0;
+            line-height: 20px;
+            font-size: 14px;
+            color: white;
+            font-family: Trebuchet, Arial, sans-serif;
+            font-weight: bold;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .onoffswitch-inner:before {
+            content: "PJ";
+            padding-left: 10px;
+            background-color: #3c97d4;
+            color: #FFFFFF;
+        }
+
+        .onoffswitch-inner:after {
+            content: "PF";
+            padding-right: 10px;
+            background-color: #1cb146;
+            color: #ffffff;
+            text-align: right;
+        }
+
+        .onoffswitch-switch {
+            display: block;
+            width: 20px;
+            background: #FFFFFF;
+            border: 2px solid #999999;
+            border-radius: 20px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 40px;
+            -moz-transition: all 0.3s ease-in 0s;
+            -webkit-transition: all 0.3s ease-in 0s;
+            -o-transition: all 0.3s ease-in 0s;
+            transition: all 0.3s ease-in 0s;
+        }
+
+        .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+            margin-left: 0;
+        }
+
+        .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+            right: 0px;
+        }
+
+        /* SWITCH */
+
+        /* CONTRATANTE */
+    </style>
+</head>
+
+<body>
+    <!-- TABS -->
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="tab-item active"><a href="#">contratante e contratado</a></li>
+        <li role="presentation" class="tab-item"><a href="#">escopo do contrato</a></li>
+        <li role="presentation" class="tab-item"><a href="#">valores e formas de pagamentos</a></li>
+        <li role="presentation" class="tab-item"><a href="#">tramitação</a></li>
+    </ul>
+    <!-- TABS -->
+    <!-- CONTAINER -->
+    <section class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="box">
+                    <div class="box-body">
+                        <form>
+                            <!-- CONTRATANTE -->
+                            <div class="form-group row">
+                                <label for="" class="col-sm-12 form-control-label">Contratante:</label>
+                                <div class="col-sm-12 half-rule"></div>
+                                <div class="col-sm-10">
+                                    <select class="form-control selectpicker" role="select-contractor"
+                                        data-live-search="true">
+                                        <option data-tokens="aborl">ABORL</option>
+                                        <option data-tokens="sbcbm">SBCBM</option>
+                                        <option data-tokens="amib">AMIB</option>
+                                    </select>
+                                </div>
+                                <!-- BUTTON ADD -->
+                                <div class="col-sm-1">
+                                    <button type="button" class="btn btn-default btn-add">
+                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                                <!-- BUTTON ADD -->
+                                <!-- BUTTON REMOVE -->
+                                <div class="col-sm-1">
+                                    <button type="button" class="btn btn-default btn-remove">
+                                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                                <!-- BUTTON REMOVE -->
+                            </div>
+                            <!-- CONTRATANTE -->
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
+                                    id="myonoffswitch" checked>
+                                <label class="onoffswitch-label" for="myonoffswitch">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CONTAINER -->
+
+    <script>
+        $(function (event) {
+            $('.selectpicker').selectpicker();
+        });
+    </script>
+</body>
+
+</html>
