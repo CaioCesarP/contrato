@@ -22,6 +22,10 @@
 
     <style>
         /* TABS */
+        .nav-tabs {
+            border-bottom: 1px solid #ce8049;
+        }
+
         .nav-tabs>li>a {
             color: #121212 !important;
             font-weight: bold;
@@ -48,6 +52,10 @@
             }
         }
 
+        .container>.row>.col-xs-5:first-child {
+            margin-right: 14.66666%;
+        }
+
         /* CONTAINER */
 
         /* CONTRATANTE */
@@ -65,7 +73,33 @@
         }
 
         /* DIVIDER */
-        /* BUTTON */
+        /* SELECT */
+        .bootstrap-select.btn-group>.dropdown-toggle>.filter-option {
+            margin-left: 15px;
+        }
+
+        .bootstrap-select.btn-group>.dropdown-toggle>.bs-caret {
+            float: left;
+        }
+
+        .bootstrap-select.btn-group>.dropdown-toggle>.bs-caret>.caret {
+            right: 0;
+            left: 12px;
+            transition: 0.4s transform;
+        }
+
+        .bootstrap-select.btn-group.open>.dropdown-toggle>.bs-caret>.caret {
+
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        /* SELECT */
+
+        /* DROWDOWN */
         .btn-group.bootstrap-select.form-control>button {
             border: #eaeaea 1px solid;
             border-bottom: #ce8049 5px solid;
@@ -73,31 +107,55 @@
         }
 
         .btn-group.bootstrap-select.form-control.open>.dropdown-menu.open {
+            overflow: hidden;
             top: 105%;
             border-radius: 0 0 4px 4px;
+            transform-origin: top center;
+            animation: rotateMenu 1250ms ease-in-out forwards;
         }
 
+        /* ROTATE MENU */
+        @keyframes rotateMenu {
+            0% {
+                transform: rotateX(-90deg);
+            }
+
+            70% {
+                transform: rotateX(20deg);
+            }
+
+            100% {
+                transform: rotateX(0deg);
+            }
+        }
+
+        /* ROTATE MENU */
+        /* DROPDOWN */
+
+        /* BUTTON */
         .form-group>div>:where(.btn-add, .btn-remove) {
             border-radius: 20px;
             padding: 3px 5px;
-            border: #121212 solid 1px;
-            box-shadow: -0.5px 1px #121212;
-            background: rgb(184, 184, 184);
-            background: -moz-linear-gradient(180deg, rgba(184, 184, 184, 1) 0%, rgba(97, 97, 97, 1) 100%);
-            background: -webkit-linear-gradient(180deg, rgba(184, 184, 184, 1) 0%, rgba(97, 97, 97, 1) 100%);
-            background: linear-gradient(180deg, rgba(184, 184, 184, 1) 0%, rgba(97, 97, 97, 1) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b8b8b8", endColorstr="#616161", GradientType=1);
+            border: #989898 solid 1px;
+            background: rgb(193, 193, 193);
+            background: -moz-linear-gradient(180deg, rgba(193, 193, 193, 1) 0%, rgba(116, 116, 116, 1) 100%);
+            background: -webkit-linear-gradient(180deg, rgba(193, 193, 193, 1) 0%, rgba(116, 116, 116, 1) 100%);
+            background: linear-gradient(180deg, rgba(193, 193, 193, 1) 0%, rgba(116, 116, 116, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c1c1c1", endColorstr="#747474", GradientType=1);
         }
 
         .form-group>div>:where(.btn-add, .btn-remove)>:where(.glyphicon-plus, .glyphicon-minus) {
-            text-shadow: 2px 2px #121212;
-            color: #c9c9c9;
+            text-shadow: 2px 2px #6e6e6e;
+            color: #dedede;
         }
 
         /* BUTTON */
         /* SWITCH */
         .onoffswitch {
-            position: relative;
+            z-index: 2;
+            position: absolute;
+            top: 8px;
+            right: 20px;
             width: 60px;
         }
 
@@ -157,6 +215,7 @@
         .onoffswitch-switch {
             display: block;
             width: 20px;
+            height: 20px;
             background: #FFFFFF;
             border: 2px solid #999999;
             border-radius: 20px;
@@ -175,12 +234,137 @@
         }
 
         .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
-            right: 0px;
+            right: 0;
         }
 
+        .onoffswitch-checkbox:checked+.onoffswitch-label:hover .onoffswitch-switch {
+            animation: pupPJ 1250ms linear infinite;
+        }
+
+        .onoffswitch-checkbox+.onoffswitch-label:hover .onoffswitch-switch {
+            animation: pupPF 1250ms linear infinite;
+        }
+
+        /* ANIMATION PUP */
+        @keyframes pupPJ {
+            0% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateX(-1.5px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+        @keyframes pupPF {
+            0% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateX(1.5px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+        /* ANIMATION PUP */
+
         /* SWITCH */
+        /* CREATE NEW */
+        .col-sm-10>.link {
+            display: none;
+        }
+
+        .col-sm-10 .bootstrap-select.btn-group.open+.link {
+            position: absolute;
+            overflow: hidden;
+            top: 53px;
+            right: 35px;
+            height: 30px;
+            display: block;
+            z-index: 1001;
+            animation: rotateNew 750ms ease-in-out forwards;
+        }
+
+        .col-sm-10 .bootstrap-select.btn-group.open+.link>a:hover {
+            text-decoration: none;
+        }
+
+        .col-sm-10 .bootstrap-select.btn-group.open+.link>a::after {
+            content: "aaaaaaaaaaaaaaaaaaaaa";
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: transparent;
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: #ce8049;
+        }
+
+        .col-sm-10 .bootstrap-select.btn-group.open+.link>a:hover:after {
+            animation: wave 2s linear infinite;
+        }
+
+        /* ANIMATION WAVE */
+        @keyframes wave {
+            0% {
+                transform: (-1px);
+            }
+
+            100% {
+                transform: translateX(-50px);
+            }
+        }
+
+        /* ANIMATION WAVE */
+
+        /* ANIMATION ROTATE NEW */
+        @keyframes rotateNew {
+            0% {
+                transform: translateY(-20px);
+            }
+
+            70% {
+                transform: translateY(5px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* ANIMATION ROTATE NEW */
+
+        /* CREATE NEW */
 
         /* CONTRATANTE */
+
+        /* CONTRATADO */
+        .input-group {
+            margin-left: 10px;
+        }
+
+        .input-group>.input-group-addon {
+            text-align: left;
+            background-color: #fff;
+        }
+
+        .input-group>.input-group-addon>.row {
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-radius: 7px;
+            -webkit-box-shadow: 0px 2px 15px 1px #00000036;
+            box-shadow: 0px 2px 15px 1px #00000036;
+        }
+
+        /* CONTRATADO */
     </style>
 </head>
 
@@ -196,7 +380,7 @@
     <!-- CONTAINER -->
     <section class="container">
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-5">
                 <div class="box">
                     <div class="box-body">
                         <form>
@@ -204,14 +388,34 @@
                             <div class="form-group row">
                                 <label for="" class="col-sm-12 form-control-label">Contratante:</label>
                                 <div class="col-sm-12 half-rule"></div>
+                                <!-- CONTAINER -->
                                 <div class="col-sm-10">
+                                    <!-- SELECT -->
                                     <select class="form-control selectpicker" role="select-contractor"
                                         data-live-search="true">
                                         <option data-tokens="aborl">ABORL</option>
                                         <option data-tokens="sbcbm">SBCBM</option>
                                         <option data-tokens="amib">AMIB</option>
                                     </select>
+                                    <!-- SELECT -->
+                                    <!-- CREATE NEW -->
+                                    <div class="link">
+                                        <a href="http://www.google.com.br" target="_blank"
+                                            rel="noopener noreferrer">novo</a>
+                                    </div>
+                                    <!-- CREATE NEW -->
+                                    <!-- SWITER -->
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
+                                            id="myonoffswitch" checked>
+                                        <label class="onoffswitch-label" for="myonoffswitch">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                    <!-- SWITER -->
                                 </div>
+                                <!-- CONTAINER -->
                                 <!-- BUTTON ADD -->
                                 <div class="col-sm-1">
                                     <button type="button" class="btn btn-default btn-add">
@@ -228,14 +432,40 @@
                                 <!-- BUTTON REMOVE -->
                             </div>
                             <!-- CONTRATANTE -->
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
-                                    id="myonoffswitch" checked>
-                                <label class="onoffswitch-label" for="myonoffswitch">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-5">
+                <div class="box">
+                    <div class="box-body">
+                        <form>
+                            <!-- CONTRATADO -->
+                            <div class="form-group row">
+                                <label for="" class="col-sm-12 form-control-label">Contratado:</label>
+                                <div class="col-sm-12 half-rule"></div>
+                                <div class="col-sm-12 input-group">
+                                    <span class="input-group-addon container">
+                                        <!-- CNPJ -->
+                                        <div class="row">
+                                            <div class="col-xs-1">
+                                                <input class="input-checkbox" type="checkbox">
+                                            </div>
+                                            <div class="col-xs-11">
+                                                <div class="well well-sm">
+                                                    <p><strong>Nome: </strong>ITARGET TECNOLOGIA DA INFORMACAO LTDA</p>
+                                                    <p><strong>CPNJ: </strong>02.130.122/0001-28</p>
+                                                    <p><strong>Responsável: </strong>Leonardo Montenegro Dantas</p>
+                                                    <p><strong>Endereço: </strong> Av. Santos Dumont, 1687, Aldeota,
+                                                        Fortaleza - CE</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- CNPJ -->
+                                    </span>
+                                </div>
                             </div>
+                            <!-- CONTRATADO -->
                         </form>
                     </div>
                 </div>
