@@ -114,7 +114,7 @@
             animation: rotateMenu 1250ms ease-in-out forwards;
         }
 
-        /* ROTATE MENU */
+        /* ANIMATION ROTATE MENU */
         @keyframes rotateMenu {
             0% {
                 transform: rotateX(-90deg);
@@ -129,7 +129,7 @@
             }
         }
 
-        /* ROTATE MENU */
+        /* ANIMATION ROTATE MENU */
         /* DROPDOWN */
 
         /* BUTTON */
@@ -156,7 +156,7 @@
             position: absolute;
             top: 8px;
             right: 20px;
-            width: 60px;
+            width: 50px;
         }
 
         .onoffswitch-checkbox {
@@ -222,7 +222,7 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            right: 40px;
+            right: 30px;
             -moz-transition: all 0.3s ease-in 0s;
             -webkit-transition: all 0.3s ease-in 0s;
             -o-transition: all 0.3s ease-in 0s;
@@ -277,6 +277,216 @@
         /* ANIMATION PUP */
 
         /* SWITCH */
+        /* POPOVER */
+        .popover {
+            min-width: 500px;
+        }
+
+        .popover-container {
+            margin: 0.5em;
+            text-align: end;
+        }
+
+        .popover-container>a {
+            text-decoration: underline;
+        }
+
+        .popover>.popover-content>ul {
+            padding: 0;
+            margin: 0.3em 0;
+            max-height: calc(38px * 7);
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .popover>.popover-content>ul>li {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: small;
+            color: #6e6e6e;
+            padding: 0 4px;
+        }
+
+        .popover>.popover-content>ul>li:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+
+        .popover>.popover-content>ul>li:hover {
+            background-color: #c87f4b;
+            color: #f0f0f0;
+        }
+
+        .popover>.popover-content>ul>li:active {
+            background-color: #f0f0f0;
+        }
+
+        .popover-title {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .popover-title>.glyphicon {
+            font-size: larger;
+            color: #34e867;
+            cursor: pointer;
+            margin: 0 4px;
+            flex: 0 0 auto;
+        }
+
+        .popover-title>.glyphicon:hover {
+            color: #24c351;
+        }
+
+        .popover-title>.glyphicon:active {
+            color: #2bd35b;
+        }
+
+        /* PILL */
+        .pill-container {
+            display: flex;
+            align-items: center;
+            flex: 1 0 auto;
+            gap: 4px;
+            padding-bottom: 3px;
+            overflow-x: auto;
+        }
+
+        .pill-container::-webkit-scrollbar {
+            margin-top: 2px;
+            height: 6px;
+            border-radius: 20px;
+            background-color: #555;
+        }
+
+        .pill-container::-webkit-scrollbar-thumb {
+            background-color: #353535;
+            border-radius: 20px;
+        }
+
+        .pill {
+            cursor: pointer;
+            padding: 4px 6px;
+            border-radius: 20px;
+            background-color: #989898;
+            display: flex;
+            align-items: center;
+        }
+
+        .pill:hover {
+            background-color: #6e6e6e;
+        }
+
+        .pill:active {
+            background-color: #808080;
+        }
+
+        .pill>:where(p, .glyphicon) {
+            margin: 0;
+            color: #eaeaea;
+            font-size: 0.6em;
+            font-weight: 700;
+        }
+
+        .pill>.glyphicon {
+            margin-left: 4px;
+            color: #989898;
+            background-color: #eaeaea;
+            padding: 3px 3px 2px 2px;
+            border-radius: 20px;
+        }
+
+        /* PILL */
+
+        /* SCROLLBAR */
+        .popover>.popover-content>ul::-webkit-scrollbar {
+            width: 8px;
+            border-radius: 20px;
+            background-color: #6e6e6e;
+        }
+
+        .popover>.popover-content>ul::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+            background-color: #353535;
+        }
+
+        .popover>.popover-content>ul::-webkit-scrollbar-thumb:hover {
+            background-color: #1b1b1b;
+        }
+
+        .popover>.popover-content>ul::-webkit-scrollbar-thumb:active {
+            background-color: #232323;
+        }
+
+        /* SCROLLBAR */
+
+        .popover>.popover-content>ul>li {
+            list-style-type: none;
+            height: 38px;
+            line-height: 24px;
+            margin: 0;
+        }
+
+        /* SEARCH */
+        .filter-search {
+            display: block;
+            width: 100%;
+            height: 26px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .filter-search:focus {
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+        }
+
+        /* SEARCH */
+
+        /* CREATE NEW */
+        .popover .popover-content .link {
+            position: absolute;
+            overflow: hidden;
+            top: 53px;
+            right: 25px;
+            height: 30px;
+            display: block;
+            z-index: 1001;
+        }
+
+        .popover .popover-content .link>a:hover {
+            text-decoration: none;
+        }
+
+        .popover .popover-content .link>a:hover:after {
+            content: "aaaaaaaaaaaaaaaaaaaaa";
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: transparent;
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: #ce8049;
+            animation: wave 2s linear infinite;
+        }
+
+        /* CREATE NEW */
+
+        /* POPOVER */
         /* CREATE NEW */
         .col-sm-10>.link {
             display: none;
@@ -297,7 +507,7 @@
             text-decoration: none;
         }
 
-        .col-sm-10 .bootstrap-select.btn-group.open+.link>a::after {
+        .col-sm-10 .bootstrap-select.btn-group.open+.link>a:hover:after {
             content: "aaaaaaaaaaaaaaaaaaaaa";
             position: absolute;
             top: 0;
@@ -306,9 +516,6 @@
             text-decoration: underline;
             text-decoration-style: wavy;
             text-decoration-color: #ce8049;
-        }
-
-        .col-sm-10 .bootstrap-select.btn-group.open+.link>a:hover:after {
             animation: wave 2s linear infinite;
         }
 
@@ -356,10 +563,11 @@
             background-color: #fff;
         }
 
-        .input-group>.input-group-addon>.row {
+        .input-group>.input-group-addon>.addon {
             margin-bottom: 15px;
             padding: 10px 0;
             border-radius: 7px;
+            background-color: rgb(238, 238, 238);
             -webkit-box-shadow: 0px 2px 15px 1px #00000036;
             box-shadow: 0px 2px 15px 1px #00000036;
         }
@@ -414,6 +622,43 @@
                                         </label>
                                     </div>
                                     <!-- SWITER -->
+                                    <!-- POPOVER -->
+                                    <div class="popover-container col-sm-12">
+                                        <a href="#" data-toggle="popover">Rep. legal: João
+                                            Silva</a>
+                                        <div class="popover-title" style="display: none;">
+                                            <!-- PILL -->
+                                            <div class="pill-container">
+                                                <div class="pill">
+                                                    <p>Gerson da Silva</p>
+                                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                                </div>
+                                                <div class="pill">
+                                                    <p>Gerson da Silva</p>
+                                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <!-- PILL -->
+                                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                        </div>
+                                        <div class="popover-content" style="display: none;">
+                                            <input class="filter-search" type="text" />
+                                            <!-- CREATE NEW -->
+                                            <div class="link">
+                                                <a href="http://www.google.com.br" target="_blank"
+                                                    rel="noopener noreferrer">novo</a>
+                                            </div>
+                                            <!-- CREATE NEW -->
+                                            <ul id="list">
+                                                <li>Gerson da Silva - 123.367.789-00</li>
+                                                <li>Jarbas da Silva - 123.367.789-00</li>
+                                                <li>Gilson da Silva - 123.367.789-00</li>
+                                                <li>Júlio da Silva - 123.367.789-00</li>
+                                                <li>Joana da Silva - 123.367.789-00</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- POPOVER -->
                                 </div>
                                 <!-- CONTAINER -->
                                 <!-- BUTTON ADD -->
@@ -445,24 +690,22 @@
                                 <label for="" class="col-sm-12 form-control-label">Contratado:</label>
                                 <div class="col-sm-12 half-rule"></div>
                                 <div class="col-sm-12 input-group">
+                                    <!-- CNPJ -->
                                     <span class="input-group-addon container">
-                                        <!-- CNPJ -->
-                                        <div class="row">
+                                        <div class="row addon">
                                             <div class="col-xs-1">
                                                 <input class="input-checkbox" type="checkbox">
                                             </div>
                                             <div class="col-xs-11">
-                                                <div class="well well-sm">
-                                                    <p><strong>Nome: </strong>ITARGET TECNOLOGIA DA INFORMACAO LTDA</p>
-                                                    <p><strong>CPNJ: </strong>02.130.122/0001-28</p>
-                                                    <p><strong>Responsável: </strong>Leonardo Montenegro Dantas</p>
-                                                    <p><strong>Endereço: </strong> Av. Santos Dumont, 1687, Aldeota,
-                                                        Fortaleza - CE</p>
-                                                </div>
+                                                <p><strong>Nome: </strong>ITARGET TECNOLOGIA DA INFORMACAO LTDA</p>
+                                                <p><strong>CPNJ: </strong>02.130.122/0001-28</p>
+                                                <p><strong>Responsável: </strong>Leonardo Montenegro Dantas</p>
+                                                <p><strong>Endereço: </strong> Av. Santos Dumont, 1687, Aldeota,
+                                                    Fortaleza - CE</p>
                                             </div>
                                         </div>
-                                        <!-- CNPJ -->
                                     </span>
+                                    <!-- CNPJ -->
                                 </div>
                             </div>
                             <!-- CONTRATADO -->
@@ -475,9 +718,33 @@
     <!-- CONTAINER -->
 
     <script>
+        // SELECTOR
         $(function (event) {
             $('.selectpicker').selectpicker();
         });
+        // SELECTOR
+        // POPOVER
+        $(document).ready(function () {
+            // CREATE
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                container: 'body',
+                title: function () {
+                    return $('.popover-title').html();
+                },
+                content: function () {
+                    return $('.popover-content').html();
+                }
+            });
+            // FILTER
+            $(".filter-search").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#list li").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+        // POPOVER
     </script>
 </body>
 
